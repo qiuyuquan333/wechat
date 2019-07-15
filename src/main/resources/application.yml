@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://192.168.1.122:3306/zjy?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&useSSL=false
+      username: root
+      password: root
+
+##  mybatis  ##
+mybatis:
+  mapper-locations: mapper/*.xml
+
+server:
+  port: 8080
