@@ -4,7 +4,7 @@
 使用的是前后端分离，现在贴上前端，其实就一个页面而已
 
 前端测试页面，就一个ajax请求
-<!DOCTYPE html>
+~~~~<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -31,4 +31,4 @@
     })
 </script>
 </body>
-</html>
+</html>~~~~
