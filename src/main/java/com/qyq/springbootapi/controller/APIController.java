@@ -8,6 +8,7 @@ import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
@@ -22,6 +23,10 @@ public class APIController {
 
     @Autowired
     private RestTemplate restTemplate;
+    @Value("${RSA.publicKey}")
+    private String publicKey;
+    @Value("${RSA.privateKey}")
+    private String privateKey;
 
     @RequestMapping("/baidu/{query}/{region}/{output}")
     public BaiduResult BaiduApiController(@PathVariable("query") String query,@PathVariable("region") String region,@PathVariable("output") String output){
@@ -39,7 +44,6 @@ public class APIController {
     })
     @GetMapping("/test")
     public ResponseResult TestApiController(@RequestParam("result") String result){
-        String privateKey = "MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAMcJilCfGtsoXe/ioAqT2sh36bz2j+KmUUcaKaF+dQNQ/LKTZNyftazl44Oyl6gEGfSYkFgGiCMutv6EMHlPRV6AYL8VNo8BmcDGDfWWyL3fDIpxtD99IXLV7k0f7Hm4doEuaEEb9pY3+wpAYe2Fr41MLRv4kI9nG7/OH24/cTHdAgMBAAECgYATKFPr1qSbG5OPF10YJ4sTaJdS3NiUlDWWhmojZSyWGSF5fr5ijezKq4Xuky4NufdVl6mtD1PjLwfmD4sq4fpnJqfAuUMUGe3NC9Y6hm3VqWdXqY9UrRaQQUUsPlQlxaMYCOwjPdgvk3BRkIet1vY/63EWjrFfXXqhb+GpgKz68QJBAO4/FZI7E9lK8BMRodrT44rB1W0hV/nan0Lel2ZSoZf0QhChCtQLP6WJ3rfC1IQHmL9ZWVqD1fzndXEHyAJcUmcCQQDV3ns0lVFll76dGZ0VEB8G+vVD7L8TIpJSuCaRKf4KZXIWoOUIoefgNEEW8AGF9EwkPlUNFrSXahEeyvjFgNcbAkAvqKLyC6tezmTUC7TrB3P/L+M333Gv45H0WH7E00bMFOqaVPzLiiyDOt84t1q3xqVBsefz+Wd3Hf4aTEowXrOFAkBrPi/r00BIwEnd/z0MldPpLSiV0f6SetCC2ELGohb4YZxPCokuxfk/LRTCisFIyZLwzazabltKXe6N0VvjtdKnAkEAxxToDiKLandMMcAZjpeQS57ENSq17DVA7v3ZCl5W9wIIi7zGwcfUFZ/Uwwk55+Hrx/DmBqxQjhGanPzp9XWMVw==";
 
         try {
             String decode = URLDecoder.decode(result, "UTF-8");
@@ -61,7 +65,6 @@ public class APIController {
 
     @GetMapping("/get")
     public ResponseResult TestApiController1(String content){
-        String publicKey = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDHCYpQnxrbKF3v4qAKk9rId+m89o/iplFHGimhfnUDUPyyk2Tcn7Ws5eODspeoBBn0mJBYBogjLrb+hDB5T0VegGC/FTaPAZnAxg31lsi93wyKcbQ/fSFy1e5NH+x5uHaBLmhBG/aWN/sKQGHtha+NTC0b+JCPZxu/zh9uP3Ex3QIDAQAB";
 
         try {
             //公钥加密

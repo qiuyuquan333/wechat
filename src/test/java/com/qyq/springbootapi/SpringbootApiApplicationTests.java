@@ -62,12 +62,14 @@ public class SpringbootApiApplicationTests {
 
     @Test
     public void Test3() throws Exception{
-        String generateKey = AesUtil.getGenerateKey();
-        System.out.println("密钥："+generateKey);
-        String encrypt = AesUtil.encrypt("这是一段测试的文本", generateKey);
-        System.out.println("加密后的数据："+encrypt);
-        String decrypt = AesUtil.decrypt(encrypt, generateKey);
-        System.out.println("解密后的内容："+decrypt);
+//        String generateKey = AesUtil.getGenerateKey();
+//        System.out.println("密钥："+generateKey);
+//        String encrypt = AesUtil.encrypt("这是一段测试的文本", generateKey);
+//        System.out.println("加密后的数据："+encrypt);
+//        String decrypt = AesUtil.decrypt(encrypt, generateKey);
+//        System.out.println("解密后的内容："+decrypt);
+        String decrypt = AesUtil.decrypt("kdkaFQsWKtYIteimkGSDpmCZ30ssdDLfbV1gu8Z4D7w=", "wHGSmjt0F09wc0bECWaQIQ==");
+        System.out.println(decrypt);
     }
 
 
