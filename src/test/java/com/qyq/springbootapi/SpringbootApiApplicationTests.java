@@ -1,5 +1,6 @@
 package com.qyq.springbootapi;
 
+import com.qyq.springbootapi.util.AesUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -38,6 +39,35 @@ public class SpringbootApiApplicationTests {
             System.out.println(o);
         }
 
+    }
+
+    @Test
+    public void Test2(){
+//        File file = new File("F://a.txt");
+//        try {
+//
+//            FileWriter writer = new FileWriter(file);
+//            writer.write("这是一段测试文本！");
+//            writer.flush();
+//            writer.close();
+//
+//            BufferedReader reader = new BufferedReader(new FileReader(file));
+//            String line = reader.readLine();
+//            System.out.println("读取："+line);
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
+
+    }
+
+    @Test
+    public void Test3() throws Exception{
+        String generateKey = AesUtil.getGenerateKey();
+        System.out.println("密钥："+generateKey);
+        String encrypt = AesUtil.encrypt("这是一段测试的文本", generateKey);
+        System.out.println("加密后的数据："+encrypt);
+        String decrypt = AesUtil.decrypt(encrypt, generateKey);
+        System.out.println("解密后的内容："+decrypt);
     }
 
 
