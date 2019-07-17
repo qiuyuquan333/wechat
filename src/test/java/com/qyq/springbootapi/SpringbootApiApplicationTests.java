@@ -1,6 +1,7 @@
 package com.qyq.springbootapi;
 
 import com.qyq.springbootapi.util.AesUtil;
+import com.qyq.springbootapi.util.RsaUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -62,14 +63,25 @@ public class SpringbootApiApplicationTests {
 
     @Test
     public void Test3() throws Exception{
-//        String generateKey = AesUtil.getGenerateKey();
-//        System.out.println("密钥："+generateKey);
-//        String encrypt = AesUtil.encrypt("这是一段测试的文本", generateKey);
-//        System.out.println("加密后的数据："+encrypt);
-//        String decrypt = AesUtil.decrypt(encrypt, generateKey);
-//        System.out.println("解密后的内容："+decrypt);
-        String decrypt = AesUtil.decrypt("kdkaFQsWKtYIteimkGSDpmCZ30ssdDLfbV1gu8Z4D7w=", "wHGSmjt0F09wc0bECWaQIQ==");
-        System.out.println(decrypt);
+        String generateKey = AesUtil.getGenerateKey();
+        System.out.println("密钥："+generateKey);
+        String encrypt = AesUtil.encrypt("这是一段测试的文本", generateKey);
+        System.out.println("加密后的数据："+encrypt);
+        String decrypt = AesUtil.decrypt(encrypt, generateKey);
+        System.out.println("解密后的内容："+decrypt);
+
+    }
+
+    @Test
+    public void Test4()throws Exception{
+        String publicKey ="MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCqNK7JiQ/o0Yc/MYRpHNsoH6ji/cVrAf+bCF1pztMDd5rplPLDGuOUR2SevmGuNi/gk0R0c7DggwSd56agpg6NcgPrWGI4dqazH02MCkDrtb58qwHTizGEC64jzxe7eyQ8dlCo59Xl6MD2mZ1sRworkM91eFnZR4w9qMDn8zKgnQIDAQAB";
+        String generateKey = AesUtil.getGenerateKey();
+        System.out.println("AES密钥："+generateKey);
+        String des_key = RsaUtil.encrypt(generateKey, publicKey);
+        System.out.println("加密过后的AES密钥："+des_key);
+        String fuckYou = AesUtil.encrypt("fuck you", generateKey);
+        System.out.println("加密的数据："+fuckYou);
+
     }
 
 
