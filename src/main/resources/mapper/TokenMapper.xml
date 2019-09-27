@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qyq.springbootapi.mapper.TokenMapper" >
+
+    <insert id="insertToken" parameterType="com.qyq.springbootapi.result.wechat.TokenExample">
+        insert into token(code,state,access_token,openid,scope) VALUES (#{code},#{state},#{access_token},#{openid},#{scope})
+    </insert>
+</mapper>

@@ -3,19 +3,13 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
       driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://localhost:3306/datatest?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&useSSL=false
+      url: jdbc:mysql://47.244.57.226:3306/zjy?serverTimezone=GMT%2b8&useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
       username: root
-      password: 123456
+      password: Zscy@888888
 
 ##  mybatis  ##
 mybatis:
   mapper-locations: mapper/*.xml
 
 server:
-  port: 8080
-
-RSA:
-  publicKey: MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDHCYpQnxrbKF3v4qAKk9rId+m89o/iplFHGimhfnUDUPyyk2Tcn7Ws5eODspeoBBn0mJBYBogjLrb+hDB5T0VegGC/FTaPAZnAxg31lsi93wyKcbQ/fSFy1e5NH+x5uHaBLmhBG/aWN/sKQGHtha+NTC0b+JCPZxu/zh9uP3Ex3QIDAQAB
-  privateKey: MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAMcJilCfGtsoXe/ioAqT2sh36bz2j+KmUUcaKaF+dQNQ/LKTZNyftazl44Oyl6gEGfSYkFgGiCMutv6EMHlPRV6AYL8VNo8BmcDGDfWWyL3fDIpxtD99IXLV7k0f7Hm4doEuaEEb9pY3+wpAYe2Fr41MLRv4kI9nG7/OH24/cTHdAgMBAAECgYATKFPr1qSbG5OPF10YJ4sTaJdS3NiUlDWWhmojZSyWGSF5fr5ijezKq4Xuky4NufdVl6mtD1PjLwfmD4sq4fpnJqfAuUMUGe3NC9Y6hm3VqWdXqY9UrRaQQUUsPlQlxaMYCOwjPdgvk3BRkIet1vY/63EWjrFfXXqhb+GpgKz68QJBAO4/FZI7E9lK8BMRodrT44rB1W0hV/nan0Lel2ZSoZf0QhChCtQLP6WJ3rfC1IQHmL9ZWVqD1fzndXEHyAJcUmcCQQDV3ns0lVFll76dGZ0VEB8G+vVD7L8TIpJSuCaRKf4KZXIWoOUIoefgNEEW8AGF9EwkPlUNFrSXahEeyvjFgNcbAkAvqKLyC6tezmTUC7TrB3P/L+M333Gv45H0WH7E00bMFOqaVPzLiiyDOt84t1q3xqVBsefz+Wd3Hf4aTEowXrOFAkBrPi/r00BIwEnd/z0MldPpLSiV0f6SetCC2ELGohb4YZxPCokuxfk/LRTCisFIyZLwzazabltKXe6N0VvjtdKnAkEAxxToDiKLandMMcAZjpeQS57ENSq17DVA7v3ZCl5W9wIIi7zGwcfUFZ/Uwwk55+Hrx/DmBqxQjhGanPzp9XWMVw==
-
-
+  port: 8089
